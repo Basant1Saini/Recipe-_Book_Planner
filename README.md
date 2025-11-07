@@ -10,6 +10,7 @@ A MERN Stack web application designed for managing and organizing recipes. Built
 - **MongoDB** - Database
 - **Express.js** - Backend Framework  
 - **React** - Frontend Library
+- **Vite** - Build Tool
 - **Node.js** - Runtime Environment
 
 > **Note:** This project strictly avoids deprecated libraries and outdated methods, utilizing modern versions of React, Express, and Mongoose for stability and security.
@@ -26,7 +27,6 @@ A MERN Stack web application designed for managing and organizing recipes. Built
 - Node.js and npm
 - MongoDB (local or MongoDB Atlas)
 - Git
-- Vim (text editor)
 
 ## 💻 Installation
 
@@ -42,12 +42,7 @@ cd server
 npm install
 ```
 
-Create `.env` file using Vim:
-```bash
-vim .env
-```
-
-Add the following content:
+Create `.env` file:
 ```env
 PORT=5000
 MONGO_URI=mongodb+srv://<username>:<password>@cluster/recipeDB
@@ -71,9 +66,9 @@ Server runs on http://localhost:5000
 ### Start Frontend (Terminal 2)
 ```bash
 cd client
-npm start
+npm run dev
 ```
-App opens at http://localhost:3000
+App opens at http://localhost:5173
 
 ## 🧩 Project Structure
 
