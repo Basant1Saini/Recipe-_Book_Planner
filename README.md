@@ -26,6 +26,8 @@ A MERN Stack web application designed for managing and organizing recipes. Built
 
 - Node.js and npm
 - MongoDB (local or MongoDB Atlas)
+username basant357_db_user
+password PbY4UUg7ZLaBTic4
 - Git
 
 ## 💻 Installation
