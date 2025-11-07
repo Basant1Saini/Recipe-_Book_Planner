@@ -270,3 +270,32 @@ body {
   margin-top: 50px;
   grid-column: 1 / -1;
 }
+
+.error {
+  text-align: center;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+  color: #721c24;
+}
+
+.error h2 {
+  margin-bottom: 10px;
+  color: #721c24;
+}
+
+.retry-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.retry-btn:hover {
+  background-color: #c82333;
+}

@@ -10,6 +10,7 @@ const RecipeList = () => {
   const [showForm, setShowForm] = useState(false);
   const [editingRecipe, setEditingRecipe] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     fetchRecipes();
@@ -19,8 +20,10 @@ const RecipeList = () => {
     try {
       const response = await axios.get(API_URL);
       setRecipes(response.data);
+      setError(null);
     } catch (error) {
       console.error('Error fetching recipes:', error);
+      setError('Failed to connect to server. Make sure the backend is running.');
     } finally {
       setLoading(false);
     }
@@ -72,6 +75,16 @@ const RecipeList = () => {
 
   if (loading) {
     return <div className="loading">Loading recipes...</div>;
+  }
+
+  if (error) {
+    return (
+      <div className="error">
+        <h2>Connection Error</h2>
+        <p>{error}</p>
+        <button onClick={fetchRecipes} className="retry-btn">Retry</button>
+      </div>
+    );
   }
 
   return (
