@@ -15,6 +15,10 @@ A MERN Stack web application designed for managing and organizing recipes. Built
 
 > **Note:** This project strictly avoids deprecated libraries and outdated methods, utilizing modern versions of React, Express, and Mongoose for stability and security.
 
+## 🌐 Live Database
+
+This project is connected to a live MongoDB Atlas database. The connection is already configured and ready to use.
+
 ## 🚀 Features
 
 - Create new recipes (Title, Ingredients, Steps)
@@ -47,7 +51,7 @@ npm install
 Create `.env` file:
 ```env
 PORT=5000
-MONGO_URI=mongodb+srv://<username>:<password>@cluster/recipeDB
+MONGO_URI=mongodb+srv://basant357_db_user:PbY4UUg7ZLaBTic4@cluster0.jabknom.mongodb.net/recipeDB?retryWrites=true&w=majority
 ```
 
 ### 3. Frontend Setup
@@ -58,14 +62,20 @@ npm install
 
 ## ▶️ Running the Application
 
-### Start Backend (Terminal 1)
+### Option 1: Quick Start (Recommended)
+```bash
+bash start.sh
+```
+
+### Option 2: Manual Start
+**Terminal 1 (Backend):**
 ```bash
 cd server
 npm run dev
 ```
 Server runs on http://localhost:5000
 
-### Start Frontend (Terminal 2)
+**Terminal 2 (Frontend):**
 ```bash
 cd client
 npm run dev
@@ -77,11 +87,42 @@ App opens at http://localhost:5173
 ```
 Recipe-Book-Planner/
 ├── server/
-│   ├── models/Recipe.js
-│   ├── routes/recipeRoutes.js
-│   └── server.js
-└── client/
-    └── src/
-        ├── components/
-        └── pages/
+│   ├── models/Recipe.js          # MongoDB Recipe schema
+│   ├── routes/recipeRoutes.js    # API endpoints (CRUD)
+│   ├── server.js                 # Express server setup
+│   ├── test-connection.js        # MongoDB connection test
+│   ├── package.json              # Backend dependencies
+│   └── .env                      # Environment variables
+├── client/
+│   └── src/
+│       ├── components/
+│       │   ├── RecipeCard.jsx    # Recipe display component
+│       │   └── RecipeForm.jsx    # Add/Edit recipe form
+│       ├── pages/
+│       │   └── RecipeList.jsx    # Main application page
+│       ├── App.jsx               # Root component
+│       └── App.css               # Application styles
+├── start.sh                      # Quick start script
+└── README.md                     # Project documentation
 ```
+
+## 🔧 API Endpoints
+
+- `GET /api/recipes` - Get all recipes
+- `GET /api/recipes/:id` - Get single recipe
+- `POST /api/recipes` - Create new recipe
+- `PUT /api/recipes/:id` - Update recipe
+- `DELETE /api/recipes/:id` - Delete recipe
+
+## 🗄️ Database
+
+- **Database**: MongoDB Atlas
+- **Collection**: recipes
+- **Schema**: Title, Ingredients (Array), Steps (Array), Timestamps
+
+## 🚀 Development
+
+- **Backend**: Express.js with Mongoose ODM
+- **Frontend**: React with Vite for fast development
+- **Styling**: Pure CSS with responsive design
+- **Error Handling**: Comprehensive error handling on both client and server
